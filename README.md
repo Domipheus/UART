@@ -15,21 +15,21 @@ Very simple, non-buffered implementation of 8 data bits, 0 parity, 1 stop bit se
  
 #Inputs/Outputs:
 
-   SYS:
+    SYS:
     I_clk            - system clock - at least 16x baud rate for recieve
                        but can be less if only using TX.
     I_clk_baud_count - the number of cycles of I_clk between baud ticks
                        used to set a known transmit/recieve baud rate.
     I_reset          - reset line. ideally, reset whilst changing baud.
 
-   TX:
+    TX:
     I_txData   - data to transmit.
     I_txSig    - signal to transmit (deassert when txReady low) or
                  change I_txData to stream out.
     O_txRdy    - '1' when idle, '0' when transmitting.
     O_tx       - actual serial output.
 
-   RX:
+    RX:
     I_rx           - actual serial input.
     I_rxCont       - receive enable/continue.
     O_rxData       - data received.
